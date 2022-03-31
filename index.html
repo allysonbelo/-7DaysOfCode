@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dracula.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+
+    <h1 class="title">#7DaysOfCode</h1>
+    <main class="main">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">#1DayOfCode</a></li>
+                <li><a href="index.html">#1DayOfCode</a></li>
+                <li><a href="index.html">#1DayOfCode</a></li>
+            </ul>
+        </nav>
+
+        <section class="day">
+            <h2 class="subtitle">#1DayOfCode</h2>
+
+            <pre>
+                <code class="language-javaScript">  
+                    let numeroUm = 1
+                    let stringUm = '1'
+                    let numeroTrinta = 30
+                    let stringTrinta = '30'
+                    let numeroDez = 10
+                    let stringDez = '10'
+
+                      if (COMPARAR O numeroUm e a stringUm) {
+                        console.log('As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes')
+                      } else {
+                        console.log('As variáveis numeroUm e stringUm não tem o mesmo valor')
+                      }
+                      
+                      if (COMPARAR O numeroTrinta e a stringTrinta) {
+                        console.log('As variáveis numeroTrinta e stringTrinta tem o mesmo valor e mesmo tipo')
+                      } else {
+                        console.log('As variáveis numeroTrinta e stringTrinta não tem o mesmo tipo')
+                      }
+                      
+                      if (COMPARAR O numeroDez e a stringDez) {
+                        console.log('As variáveis numeroDez e stringDez tem o mesmo valor, mas tipos diferentes')
+                      } else {
+                        console.log('As variáveis numeroDez e stringDez não tem o mesmo valor')
+                      }
+                </code>
+            </pre>
+
+            <h2 class="subtitle">Resultado</h2>
+
+            <pre id="result">
+                <code class="language-javaScript">  
+                    if (numeroUm == stringUm && typeof(numeroUm) != typeof(stringUm)) {
+                        result1.innerText = 'As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes'
+                    } else {
+                        result1.innerHTML = 'As variáveis numeroUm e stringUm não tem o mesmo valor'
+                    }
+                
+                    if (numeroTrinta === stringTrinta) {
+                        result2.innerText = 'As variáveis numeroTrinta e stringTrinta tem o mesmo valor e mesmo tipo'
+                    } else {
+                        result2.innerText = 'As variáveis numeroTrinta e stringTrinta não tem o mesmo tipo'
+                    }
+                
+                    if (numeroDez == stringDez && typeof(numeroDez) != typeof(stringDez)) {
+                        result3.innerText = 'As variáveis numeroDez e stringDez tem o mesmo valor, mas tipos diferentes'
+                    } else {
+                        result3.innerText = 'As variáveis numeroDez e stringDez não tem o mesmo valor'
+                    }
+                </code>
+            </pre>
+
+        </section>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="index.js"></script>
+    <script src="day-one.js"></script>
+</body>
+
+</html>
