@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/day-two.css">
+</head>
+
+<body class="container">
+
+    <h1 class="title">#7DaysOfCode</h1>
+    <main class="main">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">#1DayOfCode</a></li>
+                <li><a href="day-two.html">#2DayOfCode</a></li>
+                <li><a href="index.html">#3DayOfCode</a></li>
+                <li><a href="index.html">#4DayOfCode</a></li>
+                <li><a href="index.html">#5DayOfCode</a></li>
+                <li><a href="index.html">#6DayOfCode</a></li>
+                <li><a href="index.html">#7DayOfCode</a></li>
+            </ul>
+        </nav>
+
+        <section class="day">
+            <h2 class="subtitle">#2DayOfCode</h2>
+
+            <pre>
+                <code class="language-javaScript">  
+                    Receber as informações do usúario.
+
+                    - Qual o seu nome?
+                    - Quantos anos você tem?
+                    - Qual linguagem de programação você está estudando?
+
+                    À medida que as perguntas forem sendo feitas, a pessoa que estiver usando o programa deve responder cada uma delas.
+
+                    No final, o sistema vai exibir a mensagem:
+
+                    "Olá [nome], você tem [idade] anos e já está aprendendo [linguagem]!"
+
+                    Note que cada informação entre [ ] é uma das respostas dadas pela pessoa.
+                </code>
+            </pre>
+
+            <h2 class="subtitle">Resultado</h2>
+
+            <pre id="result">
+                <code class="language-javaScript">  
+                    
+                </code>
+            </pre>
+
+            <form>
+                <label for="name">Qual o seu nome?</label>
+                <input type="text" id="name" required>
+                <label for="number">Quantos anos você tem?</label>
+                <input type="number" id="number" required>
+                <label for="language">Qual linguagem de programação você está estudando?</label>
+                <input type="text" id="language" required>
+
+                <button class="btn" id="send">Enviar</button>
+            </form>
+
+        </section>
+    </main>
+
+    <div class="modal" role="alert">
+        <div class="modal__wrapper">
+            <span id="span__result"></span>
+            <span class="close">X</span>
+            <div id="ask">
+                <span class="ask">Você gosta de estudar [linguagem]? Responda com o número 1 para SIM ou 2 para
+                    NÃO.</span>
+                <div class="wrapper__btn">
+                    <button class="btn btn-sim">SIM</button>
+                    <button class="btn btn-nao">NÃO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/day-two.js"></script>
+</body>
+
+</html>
