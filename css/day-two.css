@@ -89,32 +89,6 @@ form input[type="number"]{
     margin-top: 20px;
 }
 
-.wrapper__btn{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.btn{
-    width: 80%;
-    max-width: 100px;
-    padding: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 3px;
-}
-
-.btn:hover{
-    background-color: orange;
-}
-
-.btn-sim:hover, .btn-nao:hover{
-    background-color: #00004f;
-    color: white;
-}
-
 #ask{
     display: none;
     opacity: 0;

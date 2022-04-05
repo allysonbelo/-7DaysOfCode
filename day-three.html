@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/day-three.css">
+</head>
+
+<body class="container">
+
+    <h1 class="title">#7DaysOfCode</h1>
+    <main class="main">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">#1DayOfCode</a></li>
+                <li><a href="day-two.html">#2DayOfCode</a></li>
+                <li><a href="day-three.html">#3DayOfCode</a></li>
+                <li><a href="index.html">#4DayOfCode</a></li>
+                <li><a href="index.html">#5DayOfCode</a></li>
+                <li><a href="index.html">#6DayOfCode</a></li>
+                <li><a href="index.html">#7DayOfCode</a></li>
+            </ul>
+        </nav>
+
+        <section class="day">
+            <h2 class="subtitle">#3DayOfCode</h2>
+
+            <pre>
+                <code class="language-javaScript">  
+                    Seu desafio de hoje é criar os destinos possíveis de um jogo, em que o usuário consiga escolher:
+
+                    1. Se quer seguir para área de Front-End ou seguir para a área de Back-End.
+
+                    2. Caso esteja na área de Front-End, se quer aprender React ou aprender Vue. Caso esteja na área de Back-End, poderá aprender C# ou aprender Java.
+
+                    3. Depois, independente das escolhas anteriores, o usuário poderá escolher entre seguir se especializando na área escolhida ou seguir se desenvolvendo para se tornar Fullstack. Você deve exibir na tela uma mensagem específica para cada escolha.
+
+                    4. Por fim, pergunte quais são as tecnologias nas quais a pessoa gostaria de se especializar ou de conhecer. Aqui, a pessoa pode responder N tecnologias, uma de cada vez. Então, enquanto ela continuar respondendo ok para a pergunta: “Tem mais alguma tecnologia que você gostaria de aprender?”, continue apresentando para ela o Prompt, para que ela complete o nome da tecnologia em questão. E, logo depois, apresente uma mensagem comentando algo sobre a linguagem inserida.
+                </code>
+            </pre>
+
+            <h2 class="subtitle">Resultado</h2>
+
+
+            <pre id="result">
+                <code class="language-javaScript">  
+                    const testarCondicao = document.querySelector("#testar");
+
+testarCondicao.addEventListener("click", function () {
+    let frontOuBack = prompt("Escolha uma área: \n 1 - Front-end \n 2 - Back-end");
+    switch (frontOuBack) {
+        case frontOuBack = "1":
+            let frontEnd = prompt("Você quer aprender: \n 1 - React  \n 2 - Vue ");
+            while (frontEnd) {
+                let frontEnd = prompt("Você quer se especializar em: \n 1 - Front-end \n Ou \n 2 - Se tornar Fullstack");
+                switch (frontEnd) {
+                    case frontEnd = "1":
+                        alert("Ser especialista em Front-end é uma boa escolha!");
+                        break;
+
+                    case frontEnd = "2":
+                        alert("Fullstack embaralha minha cabeça!");
+
+                    default:
+                        break;
+                }
+                break;
+            }
+            break;
+
+        case frontOuBack = "2":
+            let backEnd = prompt("Você quer aprender: \n 1 - C#  \n 2 - Java ");
+            while (backEnd) {
+                let backEnd = prompt("Você quer se especializar em: \n 1 - Back-End \n Ou \n 2 - Se tornar Fullstack");
+                switch (backEnd) {
+                    case backEnd = "1":
+                        alert("Tudo bem se você quiser aprender Back, mas eu vou correndo para o Front :)!");
+                        break;
+
+                    case backEnd = "2":
+                        alert("Fullstack embaralha minha cabeça!");
+
+                    default:
+                        break;
+                }
+                break;
+            }
+            break;
+
+        default:
+            alert("Não foi escolhido nenhuma área");
+            break;
+    }
+
+    let linguagens = prompt("Quais são as tecnologias nas quais você gostaria de se especializar ou de conhecer?");
+    let listaDelinguagens = [];
+    listaDelinguagens.push(linguagens);
+    while (linguagens) {
+        let escolha = prompt("Tem mais alguma tecnologia que você gostaria de aprender?");
+        listaDelinguagens.push(escolha);
+        console.log(listaDelinguagens);
+        if (escolha == "não" || escolha == "" || escolha == null) {
+            if (listaDelinguagens.length >= 1) {
+                let arr = listaDelinguagens.join(" - ");
+                alert("As linguagens que você escolheu: " + arr + " São legais também!");
+            }
+            break
+        }
+
+    }
+});
+                </code>
+            </pre>
+
+            <button id="testar" class="btn">Testar</button>
+            
+
+        </section>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/day-three.js"></script>
+</body>
+
+</html>

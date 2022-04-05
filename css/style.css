@@ -96,6 +96,7 @@ pre {
     padding: 0;
     display: block;
     white-space: pre-line;
+    max-width: 874px;
 }
 
 code {
@@ -133,6 +134,32 @@ code {
     font-size: max(16px, 1vw);
     color: white;
     font-weight: 600;
+}
+
+.wrapper__btn{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn{
+    width: 80%;
+    max-width: 100px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+
+.btn:hover{
+    background-color: orange;
+}
+
+.btn-sim:hover, .btn-nao:hover{
+    background-color: #00004f;
+    color: white;
 }
 
 
