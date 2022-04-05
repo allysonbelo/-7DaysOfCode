@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/day-four.css">
+</head>
+
+<body class="container">
+
+    <h1 class="title">#7DaysOfCode</h1>
+    <main class="main">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">#1DayOfCode</a></li>
+                <li><a href="day-two.html">#2DayOfCode</a></li>
+                <li><a href="day-three.html">#3DayOfCode</a></li>
+                <li><a href="day-four.html">#4DayOfCode</a></li>
+                <li><a href="index.html">#5DayOfCode</a></li>
+                <li><a href="index.html">#6DayOfCode</a></li>
+                <li><a href="index.html">#7DayOfCode</a></li>
+            </ul>
+        </nav>
+
+        <section class="day">
+            <h2 class="subtitle">#4DayOfCode</h2>
+
+            <pre>
+                <code class="language-javaScript">  
+                    Você deve criar um programinha que comece com um valor específico pré-definido entre 0 a 10 para o número que você vai adivinhar (7, por exemplo).
+                    Em seguida, o programa vai perguntar para você qual o valor que você deseja chutar e, caso você acerte, ele irá te parabenizar. Caso erre, ele vai te dar mais 2 tentativas.
+                    No fim, caso você não acerte nenhuma vez, ele vai imprimir qual era o número inicial.
+                    Depois que o programinha estiver funcionando, tente usar um número randômico em vez de um número pré-definido.
+                </code>
+            </pre>
+
+            <h2 class="subtitle">Resultado</h2>
+
+            <pre id="result">
+                <code class="language-javaScript">  
+                    let btn_jogar = document.querySelector(".btn");
+
+                    btn_jogar.addEventListener('click', () => {
+
+                        let numero = Math.floor(Math.random() * 10) + 1;
+                        let numeroDeTentativas = 3;
+
+                        for (let i = 0; i < 3; i++) {
+
+                            alert("Você tem " + numeroDeTentativas + " tentativa(s)");
+                            let numeroEscolhido = prompt("Escolha um número de 1 à 10");
+
+                            if (numeroEscolhido == numero) {
+                                alert("Parabéns, você acertou! \n O número era " + numero);
+                                break
+                            } else {
+                                alert("Você errou!");
+                                numeroDeTentativas--;
+                            }
+
+                            if (numeroDeTentativas == 0) {
+                                alert("Você perdeu!");
+                                break
+                            }
+                        }
+                    });
+                </code>
+            </pre>
+
+            <button class="btn">Jogar</button>
+        </section>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/day-four.js"></script>
+</body>
+
+</html>
