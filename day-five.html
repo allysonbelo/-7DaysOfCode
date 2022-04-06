@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/day-five.css">
+</head>
+
+<body class="container">
+
+    <h1 class="title">#7DaysOfCode</h1>
+    <main class="main">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">#1DayOfCode</a></li>
+                <li><a href="day-two.html">#2DayOfCode</a></li>
+                <li><a href="day-three.html">#3DayOfCode</a></li>
+                <li><a href="day-four.html">#4DayOfCode</a></li>
+                <li><a href="day-five.html">#5DayOfCode</a></li>
+                <li><a href="day-six.html">#6DayOfCode</a></li>
+                <li><a href="day-seven.html">#7DayOfCode</a></li>
+            </ul>
+        </nav>
+
+        <section class="day">
+            <h2 class="subtitle">#5DayOfCode</h2>
+
+            <pre>
+                <code class="language-javaScript">  
+                    Então hoje, para facilitar a sua ida ao supermercado, você deve criar um programa em Javascript que perguntará se você deseja adicionar uma comida na sua lista de compras, e você deve poder responder com sim ou não.
+
+                    Em seguida, ele perguntará qual comida você deseja inserir, e você digitará o nome dela, como por exemplo batata.
+                    Depois, ele deverá perguntar em qual categoria essa comida se encaixa, com algumas opções já pré-definidas, como frutas, laticínios, congelados, doces e o que mais você achar interessante. Assim, você poderá separar tudo no seu devido grupo.
+                    Por fim, caso você não queira mais adicionar nada na lista de compras e responder não na primeira pergunta, ele irá exibir uma lista com todos os itens agrupados
+                </code>
+            </pre>
+
+            <h2 class="subtitle">Resultado</h2>
+
+            <pre id="result">
+                <code class="language-javaScript">  
+                    const btn_lista = document.querySelector('.btn');
+
+btn_lista.addEventListener('click', () => {
+
+    let lisdaDeFruta = [];
+    let listaDeLaticinios = [];
+    let listaDeCongelados = [];
+    let listaDeDoces = [];
+    let listaDeOutros = [];
+    let pergunta = ""
+
+    do {
+        pergunta = prompt("Deseja adicionar algum item na lista?");
+
+        if (pergunta == "sim") {
+            let nomeItem = prompt("Digite o nome do item");
+            let categoriaItem = prompt("Digite a categoria do item\n\n Fruta\n Laticínios\n Congelados\n Doces\n Outros ");
+
+            switch (categoriaItem) {
+                case "Fruta":
+                case "fruta":
+                    lisdaDeFruta.push(nomeItem);
+                    break;
+
+                case "Laticínios":
+                case "laticínios":
+                    listaDeLaticinios.push(nomeItem);
+                    break;
+
+                case "Congelados":
+                case "congelados":
+                    listaDeCongelados.push(nomeItem);
+                    break;
+
+                case "Doces":
+                case "doces":
+                    listaDeDoces.push(nomeItem);
+                    break;
+
+                case "Outros":
+                case "outros":
+                    listaDeOutros.push(nomeItem);
+                    break;
+            }
+        }
+
+        if (pergunta == "não" || pergunta == "nao") {
+            alert(` Lista de Frutas: ${lisdaDeFruta}\n\n Lista de Laticínios: ${listaDeLaticinios}\n\n Lista de Congelados: ${listaDeCongelados}\n\n Lista de Doces: ${listaDeDoces}\n\n Lista de Outros: ${listaDeOutros}`);
+            break;
+        }
+    } while (pergunta == "sim");
+});
+                </code>
+            </pre>
+
+            <button class="btn">Lista</button>
+        </section>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/day-five.js"></script>
+</body>
+
+</html>
