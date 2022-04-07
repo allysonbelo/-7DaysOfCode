@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/dracula.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/day-six.css">
+</head>
+
+<body class="container">
+
+    <h1 class="title">#7DaysOfCode</h1>
+    <main class="main">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">#1DayOfCode</a></li>
+                <li><a href="day-two.html">#2DayOfCode</a></li>
+                <li><a href="day-three.html">#3DayOfCode</a></li>
+                <li><a href="day-four.html">#4DayOfCode</a></li>
+                <li><a href="day-five.html">#5DayOfCode</a></li>
+                <li><a href="day-six.html">#6DayOfCode</a></li>
+                <li><a href="day-seven.html">#7DayOfCode</a></li>
+            </ul>
+        </nav>
+
+        <section class="day">
+            <h2 class="subtitle">#6DayOfCode</h2>
+
+            <pre>
+                <code class="language-javaScript">  
+                    Você deverá criar a opção de remover algum item da lista, que será exibida junto à pergunta de “você deseja adicionar uma comida na lista de compras”?
+
+                    A partir daí, caso a pessoa escolha essa opção, o programa irá imprimir os elementos presentes na lista atual, e a pessoa deverá escrever qual deles deseja remover.
+
+                    Depois disso, o programa irá remover o elemento da lista e imprimir a confirmação de que o item realmente não está mais lá.
+
+                    Por fim, ele voltará para o ciclo inicial de perguntas.
+
+                    Se, na hora de deletar o item, o mesmo não for encontrado na lista, você deverá exibir uma mensagem avisando isso.
+
+                    Por exemplo: “Não foi possível encontrar o item dentro da lista!”
+
+                    Lembre-se que a opção de remover um item só deverá estar disponível a partir do momento que existir ao menos um elemento dentro da lista de compras.
+                </code>
+            </pre>
+
+            <h2 class="subtitle">Resultado</h2>
+
+            <pre id="result">
+                <code class="language-javaScript">  
+                    let btn = document.querySelector(".btn");
+
+let listaDeFruta = [];
+let listaDeLaticinios = [];
+let listaDeCongelados = [];
+let listaDeDoces = [];
+let listaDeOutros = [];
+let pergunta = '';
+
+btn.addEventListener('click', () => {
+
+    do {
+
+
+        if (listaDeFruta.length === 0 && listaDeLaticinios.length === 0 && listaDeCongelados.length === 0 && listaDeDoces.length === 0 && listaDeOutros.length === 0) {
+
+            pergunta = prompt('Deseja adicionar algum item a lista? (S/N)');
+
+            if (pergunta === 'S' || pergunta === 's') {
+                let item = prompt('Digite o item que deseja adicionar');
+                let tipo = prompt('Digite o tipo do item:\nFruta, Laticínio, Congelado, Doces ou Outros');
+
+                switch (tipo) {
+                    case 'fruta':
+                    case 'Fruta':
+                        adicionar(item, tipo);
+                }
+            }
+
+        } else {
+            pergunta2 = prompt('1 - Adicionar item\n2 - Remover item\n3 - Listar itens\n4 - Sair');
+
+            if (pergunta2 == "1") {
+                let item = prompt('Digite o item que deseja adicionar');
+                let tipo = prompt('Digite o tipo do item:\nFruta, Laticínio, Congelado, Doces ou Outros');
+                adicionar(item, tipo)
+            }
+
+            if (pergunta2 == "2") {
+                let item = prompt('Digite o item que deseja adicionar');
+                removerItem(item)
+            }
+
+            if (pergunta2 == "3") {
+                lista();
+            }
+
+            if (pergunta2 == "4") {
+
+                alert('Frutas: ' + listaDeFruta + '\nLaticínios: ' + listaDeLaticinios + '\nCongelados: ' + listaDeCongelados + '\nDoces: ' + listaDeDoces + '\nOutros: ' + listaDeOutros);
+
+                break;
+            }
+        }
+
+        if (pergunta === 'N' || pergunta === 'n') {
+            lista();
+        }
+
+    } while (pergunta == 'sim' || pergunta == 'Sim' || pergunta == 's' || pergunta == 'S');
+
+
+    function adicionar(item, categoria) {
+
+        switch (categoria) {
+            case 'fruta':
+            case 'Fruta':
+                listaDeFruta.push(item);
+                break;
+
+            case 'laticinio':
+            case 'Laticinio':
+                listaDeLaticinios.push(item);
+                break;
+
+            case 'congelado':
+            case 'Congelado':
+                listaDeCongelados.push(item);
+                break;
+
+            case 'doce':
+            case 'Doce':
+                listaDeDoces.push(item);
+                break;
+
+            case 'outros':
+            case 'Outros':
+                listaDeOutros.push(item);
+                break;
+        }
+    }
+})
+
+function removerItem(item) {
+    for (let i = 0; i < listaDeFruta.length; i++) {
+        if (item === listaDeFruta[i]) {
+            listaDeFruta.splice(listaDeFruta.indexOf(item), 1)
+            alert(`O item ${item} foi removido com sucesso!`);
+        }
+    }
+
+    for (let i = 0; i < listaDeLaticinios.length; i++) {
+        if (item === listaDeLaticinios[i]) {
+            listaDeLaticinios.splice(listaDeLaticinios.indexOf(item), 1)
+            alert(`O item ${item} foi removido com sucesso!`);
+        }
+    }
+
+    for (let i = 0; i < listaDeCongelados.length; i++) {
+        if (item === listaDeCongelados[i]) {
+            listaDeCongelados.splice(listaDeCongelados.indexOf(item), 1)
+            alert(`O item ${item} foi removido com sucesso!`);
+        }
+    }
+
+    for (let i = 0; i < listaDeDoces.length; i++) {
+        if (item === listaDeDoces[i]) {
+            listaDeDoces.splice(listaDeDoces.indexOf(item), 1)
+            alert(`O item ${item} foi removido com sucesso!`);
+        }
+    }
+
+    for (let i = 0; i < listaDeOutros.length; i++) {
+        if (item === listaDeOutros[i]) {
+            listaDeOutros.splice(listaDeOutros.indexOf(item), 1)
+            alert(`O item ${item} foi removido com sucesso!`);
+        }
+    }
+}
+
+function lista() {
+    alert('Frutas: ' + listaDeFruta + '\nLaticínios: ' + listaDeLaticinios + '\nCongelados: ' + listaDeCongelados + '\nDoces: ' + listaDeDoces + '\nOutros: ' + listaDeOutros);
+}
+                </code>
+            </pre>
+
+            <button class="btn">Lista</button>
+        </section>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/day-six.js"></script>
+</body>
+
+</html>

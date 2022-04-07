@@ -64,22 +64,32 @@
 
             <pre id="result">
                 <code class="language-javaScript">  
-                    if (numeroUm == stringUm && typeof(numeroUm) != typeof(stringUm)) {
-                        result1.innerText = 'As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes'
+                    let numeroUm = 1
+                    let stringUm = '1'
+                    let numeroTrinta = 30
+                    let stringTrinta = '30'
+                    let numeroDez = 10
+                    let stringDez = '10'
+                    
+                    let resultdisplay = document.querySelector('#result')
+                    resultdisplay.style.display = "block"
+                    
+                    if (numeroUm == stringUm && typeof (numeroUm) != typeof (stringUm)) {
+                        console.log('As variáveis numeroUm e stringUm tem o mesmo valor, mas tipos diferentes')
                     } else {
-                        result1.innerHTML = 'As variáveis numeroUm e stringUm não tem o mesmo valor'
+                        console.log('As variáveis numeroUm e stringUm não tem o mesmo valor')
                     }
-                
+                    
                     if (numeroTrinta === stringTrinta) {
-                        result2.innerText = 'As variáveis numeroTrinta e stringTrinta tem o mesmo valor e mesmo tipo'
+                        console.log('As variáveis numeroTrinta e stringTrinta tem o mesmo valor e mesmo tipo')
                     } else {
-                        result2.innerText = 'As variáveis numeroTrinta e stringTrinta não tem o mesmo tipo'
+                        console.log('As variáveis numeroTrinta e stringTrinta não tem o mesmo tipo')
                     }
-                
-                    if (numeroDez == stringDez && typeof(numeroDez) != typeof(stringDez)) {
-                        result3.innerText = 'As variáveis numeroDez e stringDez tem o mesmo valor, mas tipos diferentes'
+                    
+                    if (numeroDez == stringDez && typeof (numeroDez) != typeof (stringDez)) {
+                        console.log('As variáveis numeroDez e stringDez tem o mesmo valor, mas tipos diferentes')
                     } else {
-                        result3.innerText = 'As variáveis numeroDez e stringDez não tem o mesmo valor'
+                        console.log('As variáveis numeroDez e stringDez não tem o mesmo valor')
                     }
                 </code>
             </pre>
