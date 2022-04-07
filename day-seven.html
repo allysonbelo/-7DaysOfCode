@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="css/dracula.css">
+   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/day-six.css">
+</head>
+
+<body class="container">
+
+   <h1 class="title">#7DaysOfCode</h1>
+   <main class="main">
+
+      <nav>
+         <ul>
+            <li><a href="index.html">#1DayOfCode</a></li>
+            <li><a href="day-two.html">#2DayOfCode</a></li>
+            <li><a href="day-three.html">#3DayOfCode</a></li>
+            <li><a href="day-four.html">#4DayOfCode</a></li>
+            <li><a href="day-five.html">#5DayOfCode</a></li>
+            <li><a href="day-six.html">#6DayOfCode</a></li>
+            <li><a href="day-seven.html">#7DayOfCode</a></li>
+         </ul>
+      </nav>
+
+      <section class="day">
+         <h2 class="subtitle">#7DayOfCode</h2>
+
+         <pre>
+                <code class="language-javaScript">  
+                    Neste último desafio, a minha proposta para você é: crie a sua própria calculadora, porém com um detalhe muito importante: cada operação deverá ser uma função diferente no seu código.
+
+                    Primeiramente, a pessoa deverá escolher uma opção de operação impressa pelo programa na tela.
+
+                    Depois, ela deverá inserir os dois valores que deseja utilizar, e o programa imprimirá o resultado da operação em questão.
+
+                    As opções disponíveis deverão ser: soma, subtração, multiplicação, divisão, e sair. Nessa última, o programa deverá parar de ser executado, mostrando uma mensagem "Até a próxima".
+                </code>
+            </pre>
+
+         <h2 class="subtitle">Resultado</h2>
+
+         <pre id="result">
+                <code class="language-javaScript">  
+                  let btn = document.querySelector('.btn');
+let pergunta = null
+
+btn.addEventListener("click", () => {
+    do {
+
+        pergunta = prompt("Informe a operação desejada: \n\n1 - Soma \n2 - Subtração \n3 - Multiplicação \n4 - Divisão \n5 - Sair");
+
+        if (pergunta == 5) {
+            alert("Até a próxima!");
+            return;
+        }
+
+        let numero1 = prompt("Informe o primeiro número");
+        let numero2 = prompt("Informe o segundo número");
+
+        switch (pergunta) {
+            case "1":
+                alert(somar(numero1, numero2));
+                break;
+
+            case "2":
+                alert(subtrair(numero1, numero2));
+                break;
+
+            case "3":
+                alert(multiplicar(numero1, numero2));
+                break;
+
+            case "4":
+                alert(dividir(numero1, numero2));
+                break;
+        }
+
+    } while (pergunta != 5)
+
+})
+
+function somar(a, b) {
+    return parseInt(a) + parseInt(b)
+}
+
+function subtrair(a, b) {
+    return parseInt(a) - parseInt(b)
+}
+
+function multiplicar(a, b) {
+    return parseInt(a) * parseInt(b)
+}
+
+function dividir(a, b) {
+    return parseInt(a) / parseInt(b)
+}
+                </code>
+            </pre>
+
+         <button class="btn">Calcular</button>
+      </section>
+   </main>
+
+   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+   <script>hljs.highlightAll();</script>
+   <script src="js/day-seven.js"></script>
+</body>
+
+</html>
